@@ -5,7 +5,7 @@ class Student {
 public:
 
 	~Student() {
-		cerr << "dtor" << endl; 
+		cerr << "dtor" << endl;
 	}
 
 	bool set_course(int course) {
@@ -26,11 +26,11 @@ public:
 	bool perevod() {
 		if (course_ < 4) {
 			course_++;
-			cout << "Ñòóäåíò ïåðåâåäåí íà " << course_ << " êóðñ." << endl;
+			cout << "Студент переведен на " << course_ << " курс." << endl;
 			return true;
 		}
 		else {
-			cout << "Ñòóäåíò ó÷èòñÿ íà ïîñëåäíåì êóðñå." << endl;
+			cout << "Студент учится на последнем курсе." << endl;
 			return false;
 		}
 	};
@@ -43,18 +43,18 @@ public:
 	int get_var() const { return var_; }
 
 	void infa() const {
-		cout << "=== Èíôîðìàöèÿ î ñòóäåíòå ===" << endl;
-		cout << "Èìÿ: " << fName_ << endl;
-		cout << "Ôàìèëèÿ: " << lName_ << endl;
-		cout << "Íàïðàâëåíèå: " << spec_ << endl;
-		cout << "Êóðñ: " << course_ << endl;
-		cout << "Ãðóïïà: " << group_ << endl;
-		cout << "Âàðèàíò: " << var_ << endl;
+		cout << "=== Информация о студенте ===" << endl;
+		cout << "Имя: " << fName_ << endl;
+		cout << "Фамилия: " << lName_ << endl;
+		cout << "Направление: " << spec_ << endl;
+		cout << "Курс: " << course_ << endl;
+		cout << "Группа: " << group_ << endl;
+		cout << "Вариант: " << var_ << endl;
 		cout << "=============================" << endl;
 	}
 
 	Student() : fName_(""), lName_(""), spec_(""), course_(1), group_(1), var_(1) {
-		cout << "Êîíñòðóêòîð ïî óìîë÷àíèþ âûçâàí" << endl;
+		cout << "Конструктор по умолчанию вызван" << endl;
 	}
 
 	Student(const string& fName, const string& lName, const string& spec, int course, const int& group, int variant)
@@ -64,12 +64,12 @@ public:
 		if (course_ > 6) course_ = 6;
 		if (var_ < 1) var_ = 1;
 
-		cout << "Êîíñòðóêòîð ïîëíîãî çàïîëíåíèÿ âûçâàí" << endl;
+		cout << "Конструктор полного заполнения вызван" << endl;
 	}
 
 	Student(const Student& other)
 		: fName_(other.fName_), lName_(other.lName_), spec_(other.spec_), course_(other.course_), group_(other.group_), var_(other.var_) {
-		cout << "Êîíñòðóêòîð êîïèðîâàíèÿ âûçâàí" << endl;
+		cout << "Конструктор копирования вызван" << endl;
 	}
 
 private:
@@ -84,29 +84,29 @@ protected:
 int main() {
 	setlocale(LC_ALL, "Russian");
 
-	cout << "Ñîçäàíèå ñòóäåíòà ÷åðåç êîíñòðóêòîð ïî óìîë÷àíèþ" << endl;
+	cout << "Создание студента через конструктор по умолчанию" << endl;
 	Student student1;
 	student1.infa();
 
-	cout << "\nÑîçäàíèå ñòóäåíòà ÷åðåç êîíñòðóêòîð ïîëíîãî çàïîëíåíèÿ" << endl;
-	Student student2("Äæîííè", "Êåéäæ", "Ìàòîáèê", 2, 2, 5);
+	cout << "\nСоздание студента через конструктор полного заполнения" << endl;
+	Student student2("Джонни", "Кейдж", "Матобик", 2, 2, 5);
 	student2.infa();
 
-	cout << "\nÑîçäàíèå ñòóäåíòà ÷åðåç êîíñòðóêòîð êîïèðîâàíèÿ" << endl;
+	cout << "\nСоздание студента через конструктор копирования" << endl;
 	Student student3 = student2;
 	student3.infa();
 
-	cout << "\nÒåñò ñåòòåðîâ" << endl;
+	cout << "\nТест сеттеров" << endl;
 	student1.set_course(3);
 	student1.set_var(10);
-	cout << "Óñòàíîâëåí êóðñ: " << student1.get_course() << endl;
-	cout << "Óñòàíîâëåí âàðèàíò: " << student1.get_var() << endl;
+	cout << "Установлен курс: " << student1.get_course() << endl;
+	cout << "Установлен вариант: " << student1.get_var() << endl;
 
-	cout << "\nÒåñò ïåðåâîäà íà ñëåäóþùèé êóðñ" << endl;
+	cout << "\nТест перевода на следующий курс" << endl;
 	student2.perevod();
 	student2.infa();
 
-	// Ïåðåâîä ñòóäåíòà, êîòîðûé íà ïîñëåäíåì êóðñå
-	Student student4("Êåíøè", "Òàêàõàøè", "Èïøå÷êà", 6, 1, 3);
+	//Перевод студента, который на последнем курсе
+	Student student4("Кенши", "Такахаши", "Ипшечка", 6, 1, 3);
 	student4.perevod();
 }
