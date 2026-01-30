@@ -5,7 +5,7 @@ class Student {
 public:
 
 	~Student() {
-		cerr << "dtor" << endl;
+		cerr << "dtor" << endl; 
 	}
 
 	bool set_course(int course) {
@@ -26,11 +26,11 @@ public:
 	bool perevod() {
 		if (course_ < 4) {
 			course_++;
-			cout << "Ñòóäåíò ïåğåâåäåí íà " << course_ << " êóğñ." << endl;
+			cout << "Ã‘Ã²Ã³Ã¤Ã¥Ã­Ã² Ã¯Ã¥Ã°Ã¥Ã¢Ã¥Ã¤Ã¥Ã­ Ã­Ã  " << course_ << " ÃªÃ³Ã°Ã±." << endl;
 			return true;
 		}
 		else {
-			cout << "Ñòóäåíò ó÷èòñÿ íà ïîñëåäíåì êóğñå." << endl;
+			cout << "Ã‘Ã²Ã³Ã¤Ã¥Ã­Ã² Ã³Ã·Ã¨Ã²Ã±Ã¿ Ã­Ã  Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã­Ã¥Ã¬ ÃªÃ³Ã°Ã±Ã¥." << endl;
 			return false;
 		}
 	};
@@ -43,18 +43,18 @@ public:
 	int get_var() const { return var_; }
 
 	void infa() const {
-		cout << "=== Èíôîğìàöèÿ î ñòóäåíòå ===" << endl;
-		cout << "Èìÿ: " << fName_ << endl;
-		cout << "Ôàìèëèÿ: " << lName_ << endl;
-		cout << "Íàïğàâëåíèå: " << spec_ << endl;
-		cout << "Êóğñ: " << course_ << endl;
-		cout << "Ãğóïïà: " << group_ << endl;
-		cout << "Âàğèàíò: " << var_ << endl;
+		cout << "=== ÃˆÃ­Ã´Ã®Ã°Ã¬Ã Ã¶Ã¨Ã¿ Ã® Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã¥ ===" << endl;
+		cout << "ÃˆÃ¬Ã¿: " << fName_ << endl;
+		cout << "Ã”Ã Ã¬Ã¨Ã«Ã¨Ã¿: " << lName_ << endl;
+		cout << "ÃÃ Ã¯Ã°Ã Ã¢Ã«Ã¥Ã­Ã¨Ã¥: " << spec_ << endl;
+		cout << "ÃŠÃ³Ã°Ã±: " << course_ << endl;
+		cout << "ÃƒÃ°Ã³Ã¯Ã¯Ã : " << group_ << endl;
+		cout << "Ã‚Ã Ã°Ã¨Ã Ã­Ã²: " << var_ << endl;
 		cout << "=============================" << endl;
 	}
 
 	Student() : fName_(""), lName_(""), spec_(""), course_(1), group_(1), var_(1) {
-		cout << "Êîíñòğóêòîğ ïî óìîë÷àíèş âûçâàí" << endl;
+		cout << "ÃŠÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° Ã¯Ã® Ã³Ã¬Ã®Ã«Ã·Ã Ã­Ã¨Ã¾ Ã¢Ã»Ã§Ã¢Ã Ã­" << endl;
 	}
 
 	Student(const string& fName, const string& lName, const string& spec, int course, const int& group, int variant)
@@ -64,12 +64,12 @@ public:
 		if (course_ > 6) course_ = 6;
 		if (var_ < 1) var_ = 1;
 
-		cout << "Êîíñòğóêòîğ ïîëíîãî çàïîëíåíèÿ âûçâàí" << endl;
+		cout << "ÃŠÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° Ã¯Ã®Ã«Ã­Ã®Ã£Ã® Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿ Ã¢Ã»Ã§Ã¢Ã Ã­" << endl;
 	}
 
 	Student(const Student& other)
 		: fName_(other.fName_), lName_(other.lName_), spec_(other.spec_), course_(other.course_), group_(other.group_), var_(other.var_) {
-		cout << "Êîíñòğóêòîğ êîïèğîâàíèÿ âûçâàí" << endl;
+		cout << "ÃŠÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° ÃªÃ®Ã¯Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¿ Ã¢Ã»Ã§Ã¢Ã Ã­" << endl;
 	}
 
 private:
@@ -84,29 +84,29 @@ protected:
 int main() {
 	setlocale(LC_ALL, "Russian");
 
-	cout << "Ñîçäàíèå ñòóäåíòà ÷åğåç êîíñòğóêòîğ ïî óìîë÷àíèş" << endl;
+	cout << "Ã‘Ã®Ã§Ã¤Ã Ã­Ã¨Ã¥ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã  Ã·Ã¥Ã°Ã¥Ã§ ÃªÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° Ã¯Ã® Ã³Ã¬Ã®Ã«Ã·Ã Ã­Ã¨Ã¾" << endl;
 	Student student1;
 	student1.infa();
 
-	cout << "\nÑîçäàíèå ñòóäåíòà ÷åğåç êîíñòğóêòîğ ïîëíîãî çàïîëíåíèÿ" << endl;
-	Student student2("Äæîííè", "Êåéäæ", "Ìàòîáèê", 2, 2, 5);
+	cout << "\nÃ‘Ã®Ã§Ã¤Ã Ã­Ã¨Ã¥ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã  Ã·Ã¥Ã°Ã¥Ã§ ÃªÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° Ã¯Ã®Ã«Ã­Ã®Ã£Ã® Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿" << endl;
+	Student student2("Ã„Ã¦Ã®Ã­Ã­Ã¨", "ÃŠÃ¥Ã©Ã¤Ã¦", "ÃŒÃ Ã²Ã®Ã¡Ã¨Ãª", 2, 2, 5);
 	student2.infa();
 
-	cout << "\nÑîçäàíèå ñòóäåíòà ÷åğåç êîíñòğóêòîğ êîïèğîâàíèÿ" << endl;
+	cout << "\nÃ‘Ã®Ã§Ã¤Ã Ã­Ã¨Ã¥ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã  Ã·Ã¥Ã°Ã¥Ã§ ÃªÃ®Ã­Ã±Ã²Ã°Ã³ÃªÃ²Ã®Ã° ÃªÃ®Ã¯Ã¨Ã°Ã®Ã¢Ã Ã­Ã¨Ã¿" << endl;
 	Student student3 = student2;
 	student3.infa();
 
-	cout << "\nÒåñò ñåòòåğîâ" << endl;
+	cout << "\nÃ’Ã¥Ã±Ã² Ã±Ã¥Ã²Ã²Ã¥Ã°Ã®Ã¢" << endl;
 	student1.set_course(3);
 	student1.set_var(10);
-	cout << "Óñòàíîâëåí êóğñ: " << student1.get_course() << endl;
-	cout << "Óñòàíîâëåí âàğèàíò: " << student1.get_var() << endl;
+	cout << "Ã“Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­ ÃªÃ³Ã°Ã±: " << student1.get_course() << endl;
+	cout << "Ã“Ã±Ã²Ã Ã­Ã®Ã¢Ã«Ã¥Ã­ Ã¢Ã Ã°Ã¨Ã Ã­Ã²: " << student1.get_var() << endl;
 
-	cout << "\nÒåñò ïåğåâîäà íà ñëåäóşùèé êóğñ" << endl;
+	cout << "\nÃ’Ã¥Ã±Ã² Ã¯Ã¥Ã°Ã¥Ã¢Ã®Ã¤Ã  Ã­Ã  Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã© ÃªÃ³Ã°Ã±" << endl;
 	student2.perevod();
 	student2.infa();
 
-	// Ïåğåâîä ñòóäåíòà, êîòîğûé íà ïîñëåäíåì êóğñå
-	Student student4("Êåíøè", "Òàêàõàøè", "Èïøå÷êà", 6, 1, 3);
+	// ÃÃ¥Ã°Ã¥Ã¢Ã®Ã¤ Ã±Ã²Ã³Ã¤Ã¥Ã­Ã²Ã , ÃªÃ®Ã²Ã®Ã°Ã»Ã© Ã­Ã  Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã­Ã¥Ã¬ ÃªÃ³Ã°Ã±Ã¥
+	Student student4("ÃŠÃ¥Ã­Ã¸Ã¨", "Ã’Ã ÃªÃ ÃµÃ Ã¸Ã¨", "ÃˆÃ¯Ã¸Ã¥Ã·ÃªÃ ", 6, 1, 3);
 	student4.perevod();
 }
